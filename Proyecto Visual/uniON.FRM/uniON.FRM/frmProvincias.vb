@@ -109,7 +109,7 @@ Public Class frmProvincias
         oDs = oProvincia.BuscarPorID(ID)
 
         txtId.Text = oDs.Tables(0).Rows(0).Item("IdProvincia")
-        txtProvincia.Text = oDs.Tables(0).Rows(0).Item("Provincia")
+        txtProvincia.Text = oDs.Tables(0).Rows(0).Item("Nombre")
         cboPais.SelectedValue = oDs.Tables(0).Rows(0).Item("IdPais")
         chkActivo.Checked = oDs.Tables(0).Rows(0).Item("Activo")
 

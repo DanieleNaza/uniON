@@ -21,9 +21,9 @@ Public Class cProvincias
         End Try
     End Function
 
-    Public Function BuscarPorIdPais(ByVal IdPais As Integer) As DataSet
+    Public Function BuscarPorPais(ByVal IdPais As Integer) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("ProvinciasBuscarPorIdPais", IdPais)
+            Return oDatabase.ExecuteDataSet("ProvinciasBuscarPorPais", IdPais)
         Catch ex As System.Exception
             Throw ex
         End Try
@@ -37,17 +37,17 @@ Public Class cProvincias
         End Try
     End Function
 
-    Public Function Agregar(ByVal IdProvincia As Integer, ByVal Provincia As String, ByVal Activo As Boolean) As Double
+    Public Function Agregar(ByVal IdPais As Integer, ByVal Nombre As String, ByVal Activo As Boolean) As Double
         Try
-            Return oDatabase.ExecuteScalar("ProvinciaAgregar", IdProvincia, Provincia, Activo)
+            Return oDatabase.ExecuteScalar("ProvinciasAgregar", IdPais, Nombre, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Modificar(ByVal IdProvincia As Integer, ByVal IdPais As Integer, ByVal Provincia As String, ByVal Activo As Boolean) As DataSet
+    Public Function Modificar(ByVal IdProvincia As Integer, ByVal IdPais As Integer, ByVal Nombre As String, ByVal Activo As Boolean) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("ProvinciaModificar", IdProvincia, IdPais, Provincia, Activo)
+            Return oDatabase.ExecuteDataSet("ProvinciaModificar", IdProvincia, IdPais, Nombre, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
