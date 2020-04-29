@@ -98,10 +98,7 @@
     <Compile Include="frmPaises.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPremioTipo.Designer.vb">
-      <DependentUpon>frmPremioTipo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPremioTipo.vb">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProvincias.Designer.vb">
@@ -131,6 +128,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="uniON\AD.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmCiudades.resx">
@@ -141,9 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaises.resx">
       <DependentUpon>frmPaises.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPremioTipo.resx">
-      <DependentUpon>frmPremioTipo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProvincias.resx">
       <DependentUpon>frmProvincias.vb</DependentUpon>
@@ -175,6 +170,9 @@
       <Project>{ad0c2d1b-695b-433f-a18d-64a9993a5438}</Project>
       <Name>uniON.AD</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
