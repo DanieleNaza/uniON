@@ -1,0 +1,75 @@
+create procedure [dbo].[CiudadEliminar]
+@IdCiudad as int
+as
+delete Ciudades
+where IdCiudad=@IdCiudad
+
+create procedure [dbo].[CiudadesAgregar]
+ @Nombre varchar(50),
+ @IdProvincia int,
+ @Activo bit
+ as
+ insert
+ into Ciudades 
+ values (@Nombre,@IdProvincia,@Activo)
+
+create procedure [dbo].[CiudadesBuscarPorId]
+ @IdCiudad int
+ as
+ select *
+ from Ciudades join Provincias on Ciudades .IdProvincia = Provincias .IdProvincia 
+ join Paises on Paises .IdPais = Provincias .IdPais 
+
+create procedure [dbo].[CiudadesBuscarPorIdProvincia]
+@IdProvincia int
+as
+select IdCiudad,Nombre
+from ciudades
+where IdProvincia = @IdProvincia 
+
+create procedure [dbo].[CiudadesBuscarTodos]
+as
+select * 
+from Provincias
+
+create procedure [dbo].[CiudadesModificar]
+ @IdCiudad int,
+ @IdProvincia int,
+ @Nombre varchar(50),
+ @activo bit
+ as
+ update Ciudades 
+ set IdProvincia = @IdProvincia , Nombre = @Nombre, Activo = @activo
+ where IdCiudad = @IdCiudad 
+
+create procedure [dbo].[EventosTipoAgregar]
+@Descripcion varchar(50),
+@Activo bit
+as
+insert into EventosTipos
+values (@Descripcion, @Activo)
+
+create procedure [dbo].[EventosTipoEliminar]
+@IdTipoEvento as int 
+as 
+delete EventosTipo
+where IdTipoEvento=@IdTipoEvento
+
+create procedure [dbo].[EventosTipoModificar]
+@IdTipoEvento int,
+@Descripcion varchar(50),
+@Activo varchar(50)
+as update EventosTipos
+set IdTipoEvento=@IdTipoEvento, Descripcion=@Descripcion, Activo=@Activo
+where IdTipoEvento=@IdTipoEvento
+
+create procedure [dbo].[EventosTiposBuscarPorId]
+ @IdTipoEvento int
+ as
+ select *
+ from EventosTipos
+
+create procedure [dbo].[EventosTiposBuscarTodos]
+as 
+select *
+from EventosTipos

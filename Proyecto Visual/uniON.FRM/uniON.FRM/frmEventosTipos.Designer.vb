@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmEventosTipo
+Partial Class frmEventosTipos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class frmEventosTipo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEventosTipo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEventosTipos))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblAccion = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -49,8 +49,8 @@ Partial Class frmEventosTipo
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 427)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(432, 23)
-        Me.Panel1.TabIndex = 38
+        Me.Panel1.Size = New System.Drawing.Size(423, 23)
+        Me.Panel1.TabIndex = 45
         '
         'lblAccion
         '
@@ -69,10 +69,10 @@ Partial Class frmEventosTipo
         Me.GroupBox1.Controls.Add(Me.lblID)
         Me.GroupBox1.Controls.Add(Me.chkActivo)
         Me.GroupBox1.Controls.Add(Me.txtID)
-        Me.GroupBox1.Location = New System.Drawing.Point(64, 201)
+        Me.GroupBox1.Location = New System.Drawing.Point(64, 198)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(297, 108)
-        Me.GroupBox1.TabIndex = 37
+        Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingrese datos"
         '
@@ -142,54 +142,54 @@ Partial Class frmEventosTipo
         '
         'cmdSalir
         '
-        Me.cmdSalir.Location = New System.Drawing.Point(337, 336)
+        Me.cmdSalir.Location = New System.Drawing.Point(337, 333)
         Me.cmdSalir.Name = "cmdSalir"
         Me.cmdSalir.Size = New System.Drawing.Size(75, 23)
-        Me.cmdSalir.TabIndex = 36
+        Me.cmdSalir.TabIndex = 43
         Me.cmdSalir.Text = "&Salir"
         Me.cmdSalir.UseVisualStyleBackColor = True
         '
         'cmdLimpiar
         '
-        Me.cmdLimpiar.Location = New System.Drawing.Point(12, 162)
+        Me.cmdLimpiar.Location = New System.Drawing.Point(12, 159)
         Me.cmdLimpiar.Name = "cmdLimpiar"
         Me.cmdLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.cmdLimpiar.TabIndex = 35
+        Me.cmdLimpiar.TabIndex = 42
         Me.cmdLimpiar.Text = "Limpiar"
         Me.cmdLimpiar.UseVisualStyleBackColor = True
         '
         'cmdModificar
         '
-        Me.cmdModificar.Location = New System.Drawing.Point(337, 162)
+        Me.cmdModificar.Location = New System.Drawing.Point(337, 159)
         Me.cmdModificar.Name = "cmdModificar"
         Me.cmdModificar.Size = New System.Drawing.Size(75, 23)
-        Me.cmdModificar.TabIndex = 34
+        Me.cmdModificar.TabIndex = 41
         Me.cmdModificar.Text = "Modificar"
         Me.cmdModificar.UseVisualStyleBackColor = True
         '
         'cmdAgregar
         '
-        Me.cmdAgregar.Location = New System.Drawing.Point(256, 162)
+        Me.cmdAgregar.Location = New System.Drawing.Point(256, 159)
         Me.cmdAgregar.Name = "cmdAgregar"
         Me.cmdAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.cmdAgregar.TabIndex = 33
+        Me.cmdAgregar.TabIndex = 40
         Me.cmdAgregar.Text = "Agregar"
         Me.cmdAgregar.UseVisualStyleBackColor = True
         '
         'grlGrilla
         '
         Me.grlGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grlGrilla.Location = New System.Drawing.Point(12, 6)
+        Me.grlGrilla.Location = New System.Drawing.Point(12, 3)
         Me.grlGrilla.Name = "grlGrilla"
         Me.grlGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grlGrilla.Size = New System.Drawing.Size(400, 150)
-        Me.grlGrilla.TabIndex = 32
+        Me.grlGrilla.TabIndex = 39
         '
-        'frmEventosTipo
+        'frmEventosTipos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 450)
+        Me.ClientSize = New System.Drawing.Size(423, 450)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cmdSalir)
@@ -197,8 +197,8 @@ Partial Class frmEventosTipo
         Me.Controls.Add(Me.cmdModificar)
         Me.Controls.Add(Me.cmdAgregar)
         Me.Controls.Add(Me.grlGrilla)
-        Me.Name = "frmEventosTipo"
-        Me.Text = "frmEventosTipo"
+        Me.Name = "frmEventosTipos"
+        Me.Text = "frmEventosTipos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

@@ -1,5 +1,5 @@
 ﻿Imports uniON.AD
-Public Class frmEventosTipo
+Public Class frmEventosTipos
 
 #Region "Variables"
     Private eEstado As EstadodelFormulario
@@ -68,7 +68,7 @@ Public Class frmEventosTipo
 #End Region
 
 #Region "Formulario"
-    Private Sub frmEventosTipo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmEventosTipos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Estado = EstadodelFormulario.eConsulta
     End Sub
 #End Region
@@ -80,7 +80,7 @@ Public Class frmEventosTipo
 
     Private Sub BuscarTodos()
         Dim oDs As New DataSet
-        Dim oEventoTipo As New cEventosTipo
+        Dim oEventoTipo As New cEventosTipos
 
         oDs = oEventoTipo.BuscarTodos
 
@@ -95,7 +95,7 @@ Public Class frmEventosTipo
 
     Private Sub BuscarPorID(ByVal ID As Integer)
         Dim oDs As New DataSet
-        Dim oEventoTipo As New cEventosTipo
+        Dim oEventoTipo As New cEventosTipos
 
         oDs = oEventoTipo.BuscarPorID(ID)
 
@@ -150,7 +150,7 @@ Public Class frmEventosTipo
         Try
             If Validar() = True Then
 
-                Dim oEventoTipo As New cEventosTipo
+                Dim oEventoTipo As New cEventosTipos
 
                 If Me.Estado = EstadodelFormulario.eEditar Then
                     oEventoTipo.Modificar(txtID.Text, txtDescripcion.Text, chkActivo.Checked)

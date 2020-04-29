@@ -31,26 +31,30 @@ Public Class cCiudades
 
     Public Function BuscarPorID(ByVal IdCiudad As Integer) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("CiudadBuscarPorId", IdCiudad)
+            Return oDatabase.ExecuteDataSet("CiudadesBuscarPorId", IdCiudad)
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Agregar(ByVal IdPais As Integer, ByVal IdProvincia As Integer, ByVal Ciudad As String, ByVal Activo As Boolean) As Double
+    Public Function Agregar(ByVal IdPais As Integer, ByVal IdProvincia As Integer, ByVal Nombre As String, ByVal Activo As Boolean) As Double
         Try
-            Return oDatabase.ExecuteScalar("CiudadAgregar", IdPais, IdProvincia, Ciudad, Activo)
+            Return oDatabase.ExecuteScalar("CiudadesAgregar", IdPais, IdProvincia, Nombre, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Modificar(ByVal IdCiudad As Integer, ByVal IdPais As Integer, ByVal IdProvincia As Integer, ByVal Ciudad As String, ByVal Activo As Boolean) As DataSet
+    Public Function Modificar(ByVal IdCiudad As Integer, ByVal IdPais As Integer, ByVal IdProvincia As Integer, ByVal Nombre As String, ByVal Activo As Boolean) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("CiudadModificar", IdCiudad, IdProvincia, IdPais, Ciudad, Activo)
+            Return oDatabase.ExecuteDataSet("CiudadesModificar", IdCiudad, IdProvincia, IdPais, Nombre, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
+    End Function
+
+    Public Function Eliminar(ByVal IdCiudad As Integer) As Double
+        Return oDatabase.ExecuteScalar("CiudadEliminar", IdCiudad)
     End Function
 
 End Class

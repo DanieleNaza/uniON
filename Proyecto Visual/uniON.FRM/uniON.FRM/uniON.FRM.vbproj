@@ -86,10 +86,10 @@
     <Compile Include="frmCiudades.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEventosTipo.Designer.vb">
-      <DependentUpon>frmEventosTipo.vb</DependentUpon>
+    <Compile Include="frmEventosTipos.Designer.vb">
+      <DependentUpon>frmEventosTipos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmEventosTipo.vb">
+    <Compile Include="frmEventosTipos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPaises.Designer.vb">
@@ -124,8 +124,8 @@
     <EmbeddedResource Include="frmCiudades.resx">
       <DependentUpon>frmCiudades.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEventosTipo.resx">
-      <DependentUpon>frmEventosTipo.vb</DependentUpon>
+    <EmbeddedResource Include="frmEventosTipos.resx">
+      <DependentUpon>frmEventosTipos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaises.resx">
       <DependentUpon>frmPaises.vb</DependentUpon>
