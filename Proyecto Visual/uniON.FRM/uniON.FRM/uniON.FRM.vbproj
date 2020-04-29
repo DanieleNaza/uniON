@@ -80,16 +80,40 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCiudades.Designer.vb">
+      <DependentUpon>frmCiudades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCiudades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEventosTipo.Designer.vb">
+      <DependentUpon>frmEventosTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEventosTipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPaises.Designer.vb">
       <DependentUpon>frmPaises.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPaises.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPremiosTipo.Designer.vb">
+      <DependentUpon>frmPremiosTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPremiosTipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmProvincias.Designer.vb">
       <DependentUpon>frmProvincias.vb</DependentUpon>
     </Compile>
     <Compile Include="frmProvincias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuariosTipo.Designer.vb">
+      <DependentUpon>frmUsuariosTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuariosTipo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,11 +133,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCiudades.resx">
+      <DependentUpon>frmCiudades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventosTipo.resx">
+      <DependentUpon>frmEventosTipo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPaises.resx">
       <DependentUpon>frmPaises.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPremiosTipo.resx">
+      <DependentUpon>frmPremiosTipo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProvincias.resx">
       <DependentUpon>frmProvincias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuariosTipo.resx">
+      <DependentUpon>frmUsuariosTipo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -3,7 +3,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports System.IO
 Imports Microsoft.Practices.EnterpriseLibrary.Data
-Public Class cPaises
+Public Class cUsuariosTipo
     Dim oDatabase As Database
 
     Public Sub New()
@@ -13,9 +13,9 @@ Public Class cPaises
     Public Sub New(ByVal str As String)
     End Sub
 
-    Public Function BuscarPorId(ByVal IdPais As Integer) As DataSet
+    Public Function BuscarPorId(ByVal IdTipoUsuario As Integer) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("PaisBuscarPorId", IdPais)
+            Return oDatabase.ExecuteDataSet("UsuarioBuscarPorId", IdTipoUsuario)
         Catch ex As System.Exception
             Throw ex
         End Try
@@ -23,23 +23,23 @@ Public Class cPaises
 
     Public Function BuscarTodos() As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("PaisBuscarTodos")
+            Return oDatabase.ExecuteDataSet("UsuarioBuscarTodos")
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Agregar(ByVal Pais As String, ByVal Activo As Boolean) As Double
+    Public Function Agregar(ByVal Descripcion As String, ByVal Activo As Boolean) As Double
         Try
-            Return oDatabase.ExecuteScalar("PaisAgregar", Pais, Activo)
+            Return oDatabase.ExecuteScalar("UsuarioAgregar", Descripcion, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Modificar(ByVal IdPais As Integer, ByVal Pais As String, ByVal Activo As Boolean) As DataSet
+    Public Function Modificar(ByVal IdTipoUsuario As Integer, ByVal Descripcion As String, ByVal Activo As Boolean) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("PaisModificar", IdPais, Pais, Activo)
+            Return oDatabase.ExecuteDataSet("UsuarioModificar", IdTipoUsuario, Descripcion, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try

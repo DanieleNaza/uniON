@@ -1,5 +1,5 @@
 ﻿Imports uniON.AD
-Public Class frmProvincias
+Public Class frmCiudades
 
 #Region "Variables"
     Private eEstado As EstadodelFormulario
@@ -43,7 +43,7 @@ Public Class frmProvincias
                     DesHabililarComandos()
                     grlGrilla.Enabled = False
                     Limpiar()
-                    txtProvincia.Focus()
+                    txtCiudad.Focus()
                     Panel1.BackColor = Color.MediumAquamarine
                     lblAccion.Text = "Agregando"
                     lblAccion.ForeColor = Color.Black
@@ -85,36 +85,50 @@ Public Class frmProvincias
         oDs = Nothing
         oPais = Nothing
     End Sub
-
-    Private Sub BuscarTodos()
+    Private Sub CargarProvincia()
 
         Dim oDs As New DataSet
         Dim oProvincia As New cProvincias
 
         oDs = oProvincia.BuscarTodos
 
+        cboPais.DataSource = oDs.Tables(0)
+        cboPais.ValueMember = oDs.Tables(0).Columns(0).ToString
+        cboPais.DisplayMember = oDs.Tables(0).Columns(1).ToString
+
+        oDs = Nothing
+        oProvincia = Nothing
+    End Sub
+    Private Sub BuscarTodos()
+
+        Dim oDs As New DataSet
+        Dim oCiudad As New cCiudades
+
+        oDs = oCiudad.BuscarTodos
+
         grlGrilla.DataSource = oDs.Tables(0)
         grlGrilla.Columns(0).HeaderText = "Cod."
         grlGrilla.Columns(0).Width = 50
 
         oDs = Nothing
-        oProvincia = Nothing
+        oCiudad = Nothing
     End Sub
 
     Private Sub BuscarPorID(ByVal ID As Integer)
 
         Dim oDs As New DataSet
-        Dim oProvincia As New cProvincias
+        Dim oCiudad As New cCiudades
 
-        oDs = oProvincia.BuscarPorID(ID)
+        oDs = oCiudad.BuscarPorID(ID)
 
-        txtId.Text = oDs.Tables(0).Rows(0).Item("IdProvincia")
-        txtProvincia.Text = oDs.Tables(0).Rows(0).Item("Provincia")
+        txtId.Text = oDs.Tables(0).Rows(0).Item("IdCiudad")
+        txtCiudad.Text = oDs.Tables(0).Rows(0).Item("Ciudad")
         cboPais.SelectedValue = oDs.Tables(0).Rows(0).Item("IdPais")
+        cboProvincia.SelectedValue = oDs.Tables(0).Rows(0).Item("IdProvincia")
         chkActivo.Checked = oDs.Tables(0).Rows(0).Item("Activo")
 
         oDs = Nothing
-        oProvincia = Nothing
+        oCiudad = Nothing
 
     End Sub
 
@@ -122,8 +136,9 @@ Public Class frmProvincias
 
         CargarGrilla()
         txtId.Text = ""
-        txtProvincia.Text = ""
+        txtCiudad.Text = ""
         CargarPais()
+        CargarProvincia()
         chkActivo.Checked = True
 
 
@@ -132,8 +147,9 @@ Public Class frmProvincias
     Private Sub HabililarEdicion()
 
         txtId.Enabled = True
-        txtProvincia.Enabled = True
+        txtCiudad.Enabled = True
         cboPais.Enabled = True
+        cboProvincia.Enabled = True
         chkActivo.Enabled = True
 
     End Sub
@@ -141,8 +157,9 @@ Public Class frmProvincias
     Private Sub DesHabililarEdicion()
 
         txtId.Enabled = False
-        txtProvincia.Enabled = False
+        txtCiudad.Enabled = False
         cboPais.Enabled = False
+        cboProvincia.Enabled = False
         chkActivo.Enabled = False
 
     End Sub
@@ -181,17 +198,17 @@ Public Class frmProvincias
         Try
             If Validar() = True Then
 
-                Dim oProvincia As New cProvincias
+                Dim oCiudad As New cCiudades
 
                 If Me.Estado = EstadodelFormulario.eEditar Then
-                    oProvincia.Modificar(txtId.Text, cboPais.SelectedValue, txtProvincia.Text, chkActivo.Checked)
-                    MsgBox("Se modificó correctamente la provincia " + txtProvincia.Text + " con el código nro: " + txtId.Text, MsgBoxStyle.Information, "Exitos!")
+                    oCiudad.Modificar(txtId.Text, cboPais.SelectedValue, cboProvincia.SelectedValue, txtCiudad.Text, chkActivo.Checked)
+                    MsgBox("Se modificó correctamente la ciudad " + txtCiudad.Text + " con el código nro: " + txtId.Text, MsgBoxStyle.Information, "Exitos!")
                 End If
 
                 If Me.Estado = EstadodelFormulario.eAgregar Then
                     Dim resultado As Integer
-                    resultado = oProvincia.Agregar(cboPais.SelectedValue, txtProvincia.Text, chkActivo.Checked)
-                    MsgBox("Se agregó correctamente la provincia " + txtProvincia.Text + " con el código nro: " + resultado.ToString, MsgBoxStyle.Information, "Exitos!")
+                    resultado = oCiudad.Agregar(cboPais.SelectedValue, cboProvincia.SelectedValue, txtCiudad.Text, chkActivo.Checked)
+                    MsgBox("Se agregó correctamente la ciudad " + txtCiudad.Text + " con el código nro: " + resultado.ToString, MsgBoxStyle.Information, "Exitos!")
                 End If
 
                 Me.Estado = EstadodelFormulario.eConsulta
@@ -220,7 +237,7 @@ Public Class frmProvincias
 #Region "Funciones"
     Private Function Validar() As Boolean
 
-        If txtProvincia.Text = "" Then
+        If txtCiudad.Text = "" Then
 
             MsgBox("Complete el nombre de la provincia", MsgBoxStyle.Exclamation, "Mensaje")
 
