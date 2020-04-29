@@ -1,20 +1,7 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "3zVinpHnnokF0qdqzL52S8lmW6VgbTcxqgR6moWgBox+jgjOR58XQRcAb6sUYggwrGk74KVobosu0ZUAGpiHPg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Daniele\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\uniON.AD.vbproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Daniele\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Daniele\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
-=======
-  "dgSpecHash": "15kfhiShe2+6Y75tS7d4re13MzmYodHBGjjKnvVuB36IsJPzUN2+yCcaKz07p4LCBmG6szWJuzsAHW6aDxgMkw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\brian\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\uniON.AD.vbproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\brian\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\brian\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
->>>>>>> 4d8eb89167b6712ed9cea243f0bc4adf11f370e9
+
+
   ],
   "logs": []
 }

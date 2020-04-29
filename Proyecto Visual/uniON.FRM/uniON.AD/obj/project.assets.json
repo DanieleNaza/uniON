@@ -180,39 +180,16 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\Daniele\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
-=======
-    "C:\\Users\\brian\\.nuget\\packages\\": {}
->>>>>>> 4d8eb89167b6712ed9cea243f0bc4adf11f370e9
-  },
-  "project": {
-    "version": "1.0.0",
-    "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Daniele\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\uniON.AD.vbproj",
-      "projectName": "uniON.AD",
-      "projectPath": "C:\\Users\\Daniele\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\uniON.AD.vbproj",
-      "packagesPath": "C:\\Users\\Daniele\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Daniele\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\obj\\",
-=======
+
       "projectUniqueName": "C:\\Users\\brian\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\uniON.AD.vbproj",
       "projectName": "uniON.AD",
       "projectPath": "C:\\Users\\brian\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\uniON.AD.vbproj",
       "packagesPath": "C:\\Users\\brian\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\brian\\Documents\\GitHub\\uniON\\Proyecto Visual\\uniON.FRM\\uniON.AD\\obj\\",
->>>>>>> 4d8eb89167b6712ed9cea243f0bc4adf11f370e9
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\Daniele\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
         "C:\\Users\\brian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 4d8eb89167b6712ed9cea243f0bc4adf11f370e9
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -251,13 +228,7 @@
           "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
->>>>>>> 4d8eb89167b6712ed9cea243f0bc4adf11f370e9
+        "warn": true
       }
     }
   }
-}
