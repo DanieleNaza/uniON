@@ -131,6 +131,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="uniON\AD.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmCiudades.resx">
@@ -175,6 +176,9 @@
       <Project>{ad0c2d1b-695b-433f-a18d-64a9993a5438}</Project>
       <Name>uniON.AD</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

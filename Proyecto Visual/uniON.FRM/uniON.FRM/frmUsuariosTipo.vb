@@ -1,6 +1,4 @@
 ﻿Imports uniON.AD
-
-
 Public Class frmUsuariosTipo
 
 #Region "Variables"
