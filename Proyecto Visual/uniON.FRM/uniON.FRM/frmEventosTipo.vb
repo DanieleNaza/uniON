@@ -1,5 +1,5 @@
 ﻿Imports uniON.AD
-Public Class frmProvincias
+Public Class frmEventosTipo
 
 #Region "Variables"
     Private eEstado As EstadodelFormulario
@@ -11,7 +11,6 @@ Public Class frmProvincias
         eAgregar = 2
         eEditar = 3
     End Enum
-
 #End Region
 
 #Region "Propiedades"
@@ -20,7 +19,9 @@ Public Class frmProvincias
             Return eEstado
         End Get
         Set(ByVal vNewValue As EstadodelFormulario)
+
             Select Case vNewValue
+
                 Case EstadodelFormulario.eConsulta
 
                     Limpiar()
@@ -37,13 +38,13 @@ Public Class frmProvincias
                 Case EstadodelFormulario.eAgregar
 
                     HabililarEdicion()
-                    txtId.Enabled = False
+                    txtID.Enabled = False
                     cmdAceptar.Enabled = True
                     cmdCancelar.Enabled = True
                     DesHabililarComandos()
                     grlGrilla.Enabled = False
                     Limpiar()
-                    txtProvincia.Focus()
+                    txtDescripcion.Focus()
                     Panel1.BackColor = Color.MediumAquamarine
                     lblAccion.Text = "Agregando"
                     lblAccion.ForeColor = Color.Black
@@ -51,7 +52,7 @@ Public Class frmProvincias
                 Case EstadodelFormulario.eEditar
 
                     HabililarEdicion()
-                    txtId.Enabled = False
+                    txtID.Enabled = False
                     cmdAceptar.Enabled = True
                     cmdCancelar.Enabled = True
                     DesHabililarComandos()
@@ -66,105 +67,73 @@ Public Class frmProvincias
     End Property
 #End Region
 
+#Region "Formulario"
+    Private Sub frmEventosTipo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Estado = EstadodelFormulario.eConsulta
+    End Sub
+#End Region
+
 #Region "Procedimientos"
     Private Sub CargarGrilla()
         BuscarTodos()
     End Sub
 
-    Private Sub CargarPais()
-
-        Dim oDs As New DataSet
-        Dim oPais As New cPaises
-
-        oDs = oPais.BuscarTodos
-
-        cboPais.DataSource = oDs.Tables(0)
-        cboPais.ValueMember = oDs.Tables(0).Columns(0).ToString
-        cboPais.DisplayMember = oDs.Tables(0).Columns(1).ToString
-
-        oDs = Nothing
-        oPais = Nothing
-    End Sub
-
     Private Sub BuscarTodos()
-
         Dim oDs As New DataSet
-        Dim oProvincia As New cProvincias
+        Dim oEventoTipo As New cEventosTipo
 
-        oDs = oProvincia.BuscarTodos
+        oDs = oEventoTipo.BuscarTodos
 
         grlGrilla.DataSource = oDs.Tables(0)
+
         grlGrilla.Columns(0).HeaderText = "Cod."
         grlGrilla.Columns(0).Width = 50
 
         oDs = Nothing
-        oProvincia = Nothing
+        oEventoTipo = Nothing
     End Sub
 
     Private Sub BuscarPorID(ByVal ID As Integer)
-
         Dim oDs As New DataSet
-        Dim oProvincia As New cProvincias
+        Dim oEventoTipo As New cEventosTipo
 
-        oDs = oProvincia.BuscarPorID(ID)
+        oDs = oEventoTipo.BuscarPorID(ID)
 
-        txtId.Text = oDs.Tables(0).Rows(0).Item("IdProvincia")
-        txtProvincia.Text = oDs.Tables(0).Rows(0).Item("Provincia")
-        cboPais.SelectedValue = oDs.Tables(0).Rows(0).Item("IdPais")
+        txtID.Text = oDs.Tables(0).Rows(0).Item("IdEvento")
+        txtDescripcion.Text = oDs.Tables(0).Rows(0).Item("Descripcion")
         chkActivo.Checked = oDs.Tables(0).Rows(0).Item("Activo")
 
         oDs = Nothing
-        oProvincia = Nothing
-
+        oEventoTipo = Nothing
     End Sub
 
     Private Sub Limpiar()
-
         CargarGrilla()
-        txtId.Text = ""
-        txtProvincia.Text = ""
-        CargarPais()
+        txtID.Text = ""
+        txtDescripcion.Text = ""
         chkActivo.Checked = True
-
-
     End Sub
 
     Private Sub HabililarEdicion()
-
-        txtId.Enabled = True
-        txtProvincia.Enabled = True
-        cboPais.Enabled = True
+        txtID.Enabled = True
+        txtDescripcion.Enabled = True
         chkActivo.Enabled = True
-
     End Sub
 
     Private Sub DesHabililarEdicion()
-
-        txtId.Enabled = False
-        txtProvincia.Enabled = False
-        cboPais.Enabled = False
+        txtID.Enabled = False
+        txtDescripcion.Enabled = False
         chkActivo.Enabled = False
-
     End Sub
 
     Private Sub HabililarComandos()
-
         cmdAgregar.Enabled = True
         cmdModificar.Enabled = True
-
     End Sub
 
     Private Sub DesHabililarComandos()
-
         cmdAgregar.Enabled = False
         cmdModificar.Enabled = False
-
-    End Sub
-#End Region
-
-#Region "Formulario"
-    Private Sub frm_SubRubros_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Estado = EstadodelFormulario.eConsulta
     End Sub
 #End Region
 
@@ -181,17 +150,17 @@ Public Class frmProvincias
         Try
             If Validar() = True Then
 
-                Dim oProvincia As New cProvincias
+                Dim oEventoTipo As New cEventosTipo
 
                 If Me.Estado = EstadodelFormulario.eEditar Then
-                    oProvincia.Modificar(txtId.Text, cboPais.SelectedValue, txtProvincia.Text, chkActivo.Checked)
-                    MsgBox("Se modificó correctamente la provincia " + txtProvincia.Text + " con el código nro: " + txtId.Text, MsgBoxStyle.Information, "Exitos!")
+                    oEventoTipo.Modificar(txtID.Text, txtDescripcion.Text, chkActivo.Checked)
+                    MsgBox("Se modificó correctamente el evento con el código nro: " + txtID.Text, MsgBoxStyle.Information, "Exitos!")
                 End If
 
                 If Me.Estado = EstadodelFormulario.eAgregar Then
                     Dim resultado As Integer
-                    resultado = oProvincia.Agregar(cboPais.SelectedValue, txtProvincia.Text, chkActivo.Checked)
-                    MsgBox("Se agregó correctamente la provincia " + txtProvincia.Text + " con el código nro: " + resultado.ToString, MsgBoxStyle.Information, "Exitos!")
+                    resultado = oEventoTipo.Agregar(txtDescripcion.Text, chkActivo.Checked)
+                    MsgBox("Se agregó correctamente el evento " + txtDescripcion.Text + " con el código nro: " + resultado.ToString, MsgBoxStyle.Information, "Exitos!")
                 End If
 
                 Me.Estado = EstadodelFormulario.eConsulta
@@ -204,7 +173,7 @@ Public Class frmProvincias
     Private Sub CmdCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancelar.Click
         If MsgBox("¿Está seguro que desea cancelar?" & vbCrLf &
                "Se perderán las últimas modificaciones",
-               vbYesNo, "Confirmación de Acción") = MsgBoxResult.Yes Then
+               vbYesNo, "Confirmación de acción") = MsgBoxResult.Yes Then
 
             Me.Estado = EstadodelFormulario.eConsulta
 
@@ -219,10 +188,9 @@ Public Class frmProvincias
 
 #Region "Funciones"
     Private Function Validar() As Boolean
+        If txtDescripcion.Text = "" Then
 
-        If txtProvincia.Text = "" Then
-
-            MsgBox("Complete el nombre de la provincia", MsgBoxStyle.Exclamation, "Mensaje")
+            MsgBox("Complete el nombre del evento", MsgBoxStyle.Exclamation, "Mensaje")
 
             Return False
         End If
@@ -232,15 +200,13 @@ Public Class frmProvincias
 
 #Region "Grilla"
     Private Sub grl_Grilla_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grlGrilla.CellContentClick
-
         BuscarPorID(grlGrilla.CurrentRow.Cells(0).Value)
         cmdModificar.Enabled = True
-
     End Sub
 #End Region
 
 #Region "Salir"
-    Private Sub cmd_Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSalir.Click
+    Private Sub cmdSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSalir.Click
         Close()
     End Sub
 #End Region

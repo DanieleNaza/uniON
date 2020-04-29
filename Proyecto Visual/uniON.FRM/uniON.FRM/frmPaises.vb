@@ -150,17 +150,17 @@ Public Class frmPaises
         Try
             If Validar() = True Then
 
-                Dim oRubro As New cPaises
+                Dim oPais As New cPaises
 
                 If Me.Estado = EstadodelFormulario.eEditar Then
-                    oRubro.Modificar(txtID.Text, txtPais.Text, chkActivo.Checked)
-                    MsgBox("Se modificó correctamente el país con el código Nro: " + txtID.Text, MsgBoxStyle.Information, "Exitos!")
+                    oPais.Modificar(txtID.Text, txtPais.Text, chkActivo.Checked)
+                    MsgBox("Se modificó correctamente el país con el código nro: " + txtID.Text, MsgBoxStyle.Information, "Exitos!")
                 End If
 
                 If Me.Estado = EstadodelFormulario.eAgregar Then
                     Dim resultado As Integer
-                    resultado = oRubro.Agregar(txtPais.Text, chkActivo.Checked)
-                    MsgBox("Se agregó correctamente el país " + txtPais.Text + " con el código Nro: " + resultado.ToString, MsgBoxStyle.Information, "Exitos!")
+                    resultado = oPais.Agregar(txtPais.Text, chkActivo.Checked)
+                    MsgBox("Se agregó correctamente el país " + txtPais.Text + " con el código nro: " + resultado.ToString, MsgBoxStyle.Information, "Exitos!")
                 End If
 
                 Me.Estado = EstadodelFormulario.eConsulta
