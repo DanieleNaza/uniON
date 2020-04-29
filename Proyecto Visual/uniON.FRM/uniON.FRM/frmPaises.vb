@@ -100,7 +100,7 @@ Public Class frmPaises
         oDs = oRubro.BuscarPorID(ID)
 
         txtID.Text = oDs.Tables(0).Rows(0).Item("IdPais")
-        txtPais.Text = oDs.Tables(0).Rows(0).Item("Pais")
+        txtPais.Text = oDs.Tables(0).Rows(0).Item("Nombre")
         chkActivo.Checked = oDs.Tables(0).Rows(0).Item("Activo")
 
         oDs = Nothing

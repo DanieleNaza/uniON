@@ -18,3 +18,7 @@ C:\Users\usuario\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\
 C:\Users\usuario\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.exe
 C:\Users\usuario\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.xml
 C:\Users\usuario\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.pdb
+C:\Users\facul\OneDrive\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.vbprojAssemblyReference.cache
+C:\Users\facul\OneDrive\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.exe
+C:\Users\facul\OneDrive\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.xml
+C:\Users\facul\OneDrive\Documents\GitHub\uniON\Proyecto Visual\uniON.FRM\uniON.FRM\obj\Debug\uniON.FRM.pdb

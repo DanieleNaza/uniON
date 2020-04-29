@@ -15,7 +15,7 @@ Public Class cPaises
 
     Public Function BuscarPorId(ByVal IdPais As Integer) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("PaisBuscarPorId", IdPais)
+            Return oDatabase.ExecuteDataSet("PaisesBuscarPorId", IdPais)
         Catch ex As System.Exception
             Throw ex
         End Try
@@ -23,23 +23,23 @@ Public Class cPaises
 
     Public Function BuscarTodos() As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("PaisBuscarTodos")
+            Return oDatabase.ExecuteDataSet("PaisesBuscarTodos")
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Agregar(ByVal Pais As String, ByVal Activo As Boolean) As Double
+    Public Function Agregar(ByVal Nombre As String, ByVal Activo As Boolean) As Double
         Try
-            Return oDatabase.ExecuteScalar("PaisAgregar", Pais, Activo)
+            Return oDatabase.ExecuteScalar("PaisesAgregar", Nombre, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
     End Function
 
-    Public Function Modificar(ByVal IdPais As Integer, ByVal Pais As String, ByVal Activo As Boolean) As DataSet
+    Public Function Modificar(ByVal IdPais As Integer, ByVal Nombre As String, ByVal Activo As Boolean) As DataSet
         Try
-            Return oDatabase.ExecuteDataSet("PaisModificar", IdPais, Pais, Activo)
+            Return oDatabase.ExecuteDataSet("PaisesModificar", IdPais, Nombre, Activo)
         Catch ex As System.Exception
             Throw ex
         End Try
